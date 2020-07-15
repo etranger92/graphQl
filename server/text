@@ -1,0 +1,20 @@
+The code comes from at 90% from Ninja, a youtuber.
+
+yarn add graphql express-graphql --save
+
+GraphQL is a better way of fetching data by reducing the amount of calls. It’s flexible we can also filter which data we want to receive.
+
+- (1) You create the schema by adding: BookType and Root query and you add the end point in the app /Schema.js and app.js
+- (2) You enable the graph tool in the app. /app.js
+- (3) Type relations look in Schema (When you target two tables that are ralated/ Within bookTYpe Schema.js
+- (4) Mutation: To add new data //Schema.js
+- (5) Non Null using graphqlNonNull: To require a proprety example a name for book. You cannot add a book without providing the name. 
+- (6) In order to work with graphql in the front end to make query we need to use a graphclient like "apolo" we cannot use axios or fetch like we usually do. public/app.js
+    yarn add apollo-boost react-apollo graphql --save
+- (7) Create your query for the front end and connect it to your component: 
+public/src/queries/queries.js
+public/src/component/BookList.jsx
+- (8) Add variables to the front end when you use mutation (add new data) 
+public/src/queries/queries.js
+public/src/component/AddBook.jsx
+- (9) After a mutation we should re fetch our datas if we want to update the component sync without having to refresh it
